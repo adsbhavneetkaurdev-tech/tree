@@ -1,0 +1,39 @@
+:root {
+  --evergreen-950: #030b08;
+  --evergreen-900: #06140f;
+  --evergreen-800: #0b231a;
+  --evergreen-700: #123526;
+  --evergreen-600: #1d4d3a;
+  --gold: #e2b866;
+  --gold-bright: #f3d48b;
+  --champagne: #f4e4bc;
+  --ivory: #fbf6ea;
+  --red: #a8303a;
+  --red-soft: #c4545c;
+  --muted: rgba(244, 228, 188, 0.62);
+  --hairline: rgba(226, 184, 102, 0.28);
+  --font-serif-stack: var(--font-serif), "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans-stack: var(--font-sans), "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--evergreen-900);
+  color: var(--champagne);
+  font-family: var(--font-sans-stack);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, input, textarea, select { font: inherit; color: inherit; }
+
+:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
