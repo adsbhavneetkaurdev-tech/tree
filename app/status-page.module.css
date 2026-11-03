@@ -1,0 +1,21 @@
+.page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 24px 16px;
+  background:
+    radial-gradient(90% 50% at 50% 0%, rgba(226, 184, 102, 0.14), transparent 70%),
+    var(--evergreen-900);
+}
+.card { max-width: 440px; text-align: center; }
+.eyebrow { margin: 0 0 12px; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+.title { margin: 0 0 12px; font-family: var(--font-serif-stack); font-weight: 400; font-size: clamp(30px, 8vw, 40px); line-height: 1.1; color: var(--ivory); text-wrap: balance; }
+.text { margin: 0 0 26px; color: var(--muted); line-height: 1.5; }
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 28px; border: 0; border-radius: 999px; cursor: pointer;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+  color: #2a1d06; background: linear-gradient(180deg, #f6dc9c, #e2b866 55%, #c99a45);
+}

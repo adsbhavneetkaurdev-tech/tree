@@ -617,7 +617,7 @@ export class WishTreeEngine {
 
   private region(side: -1 | 1): { x: number; min: number; max: number } {
     const inner = side < 0 ? this.g.cx - this.g.halfWidth - 40 : this.g.cx + this.g.halfWidth + 40;
-    if (side < 0) return { x: inner, min: this.opts.showUi ? 215 : 70, max: 1035 };
+    if (side < 0) return { x: inner, min: this.opts.showUi ? 215 : 70, max: 1000 }; // room for the credit badge
     return { x: inner, min: 80, max: this.opts.qr ? 845 : 1035 };
   }
 

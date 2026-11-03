@@ -5,6 +5,7 @@ import QRCode from "qrcode";
 import { WishTreeEngine, cornerPinMatrix, rectCorners, DEFAULT_TREE, type Corners, type TreeGeometry } from "@/engine";
 import { subscribeToChanges, type ConnectionState } from "@/lib/realtime-client";
 import type { PublicWish, RealtimeConfig } from "@/lib/types";
+import MorusCredit from "@/components/MorusCredit";
 import styles from "./display.module.css";
 
 interface Props {
@@ -243,12 +244,15 @@ export default function DisplayClient({ realtime, guestUrl, fonts }: Props) {
 
   return (
     <div className={`${styles.stage} ${idle && !calibrating ? styles.idle : ""}`} onDoubleClick={toggleFullscreen}>
-      <canvas
-        ref={canvasRef}
-        className={styles.canvas}
-        style={{ width: fit?.w, height: fit?.h, transform }}
-        aria-label={`Christmas tree with ${count} wishes`}
-      />
+      <div
+        className={styles.frame}
+        style={{ width: fit?.w, height: fit?.h, transform, ["--s" as string]: fit ? fit.w / 1920 : 1 }}
+      >
+        <canvas ref={canvasRef} className={styles.canvas} aria-label={`Christmas tree with ${count} wishes`} />
+        <div className={styles.credit} onDoubleClick={(e) => e.stopPropagation()}>
+          <MorusCredit variant="display" />
+        </div>
+      </div>
 
       {calibrating && cornersPx && (
         <div className={styles.calibrate} onPointerMove={onHandleMove} onPointerUp={onHandleUp}>

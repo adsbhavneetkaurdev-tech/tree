@@ -6,12 +6,23 @@
   user-select: none;
 }
 .idle { cursor: none; }
-.canvas {
+.frame {
   position: absolute;
   left: 0;
   top: 0;
   transform-origin: 0 0;
+}
+.canvas {
   display: block;
+  width: 100%;
+  height: 100%;
+}
+/* Bottom-left of the 16:9 frame, in 1920×1080 units scaled by --s. */
+.credit {
+  position: absolute;
+  left: calc(var(--s, 1) * 72px);
+  bottom: calc(var(--s, 1) * 26px);
+  line-height: 0;
 }
 .hud {
   position: fixed;

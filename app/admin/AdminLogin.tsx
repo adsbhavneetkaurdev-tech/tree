@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MorusCredit from "@/components/MorusCredit";
 import styles from "./admin.module.css";
 
 export default function AdminLogin({ configured }: { configured: boolean }) {
@@ -50,6 +51,7 @@ export default function AdminLogin({ configured }: { configured: boolean }) {
           {busy ? "Signing in…" : "Sign in"}
         </button>
       </form>
+      <MorusCredit />
     </main>
   );
 }

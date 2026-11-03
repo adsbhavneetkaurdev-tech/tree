@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import QRCode from "qrcode";
 import { guestUrl } from "@/lib/guest-url";
+import MorusCredit from "@/components/MorusCredit";
 import styles from "./qr.module.css";
 
 export const dynamic = "force-dynamic";
@@ -25,6 +26,7 @@ export default async function QrPage() {
         <p className={styles.cta}>Scan with your phone camera to add your wish</p>
         <p className={styles.url}>{url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</p>
       </div>
+      <MorusCredit />
     </main>
   );
 }

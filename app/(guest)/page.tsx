@@ -1,4 +1,5 @@
 import WishForm from "./WishForm";
+import MorusCredit from "@/components/MorusCredit";
 import styles from "./guest.module.css";
 
 export const metadata = {
@@ -53,6 +54,7 @@ export default function GuestPage() {
         <footer className={styles.footer}>
           Your wish will appear on the tree once it has been shared with the room.
         </footer>
+        <MorusCredit />
       </div>
     </main>
   );

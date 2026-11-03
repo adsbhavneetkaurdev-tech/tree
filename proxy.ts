@@ -32,5 +32,6 @@ export function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/|favicon|icon|robots).*)"],
+  // Skip Next internals and any static file (logos, images) in /public.
+  matcher: ["/((?!_next/|favicon|icon|robots|.*\\.(?:png|jpe?g|webp|svg|gif|ico)$).*)"],
 };

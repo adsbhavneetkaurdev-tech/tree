@@ -83,6 +83,13 @@ create policy "Public can read tree state"
   on public.tree_state for select to anon, authenticated
   using (true);
 
+-- ─── Table privileges ──────────────────────────────────────────────────────
+-- Newer Supabase projects no longer grant table access to the API roles by
+-- default. Grant it explicitly (RLS above still limits what anon can see).
+grant usage on schema public to anon, authenticated, service_role;
+grant select on public.wishes, public.tree_state to anon, authenticated;
+grant select, insert, update, delete on public.wishes, public.tree_state to service_role;
+
 -- ─── Realtime ──────────────────────────────────────────────────────────────
 do $$ begin
   alter publication supabase_realtime add table public.tree_state;

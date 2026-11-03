@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MAX_MESSAGE, MAX_NAME } from "@/lib/validation";
+import HostedBy from "@/components/HostedBy";
 import styles from "./guest.module.css";
 
 type Phase = "idle" | "sending" | "sent";
@@ -89,6 +90,7 @@ export default function WishForm() {
         <button type="button" className={styles.secondary} onClick={again}>
           Make another wish
         </button>
+        <HostedBy compact />
       </section>
     );
   }
@@ -97,6 +99,7 @@ export default function WishForm() {
 
   return (
     <form className={styles.form} onSubmit={submit} noValidate>
+      <HostedBy />
       <label className={styles.label} htmlFor="wish">What is your Christmas wish?</label>
       <div className={styles.field}>
         <textarea

@@ -1,0 +1,79 @@
+/* ─── Created by Morus AI ─── */
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 16px max(16px, env(safe-area-inset-bottom));
+}
+.credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(244, 228, 188, 0.62);
+  text-decoration: none;
+  font-family: var(--font-sans-stack);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  transition: color 0.2s, opacity 0.3s;
+}
+.credit:hover, .credit:focus-visible { color: var(--ivory); }
+.creditText { white-space: nowrap; }
+/* The logo has dark navy lettering, so it sits on a soft ivory backing. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: rgba(251, 246, 234, 0.94);
+  box-shadow: 0 4px 14px -6px rgba(0, 0, 0, 0.7);
+}
+.morusLogo { display: block; height: 24px; width: auto; }
+.morusFallback { font-weight: 600; font-size: 13px; line-height: 24px; color: #e2491a; letter-spacing: 0.02em; }
+
+/* Projector: sized relative to the 1920×1080 frame via --s, subtle until hovered. */
+.creditDisplay {
+  gap: calc(var(--s, 1) * 9px);
+  font-size: calc(var(--s, 1) * 14px);
+  opacity: 0.5;
+  color: rgba(244, 228, 188, 0.8);
+}
+.creditDisplay:hover { opacity: 0.95; }
+.creditDisplay .chip { padding: calc(var(--s, 1) * 3px) calc(var(--s, 1) * 7px); border-radius: calc(var(--s, 1) * 6px); background: rgba(251, 246, 234, 0.85); }
+.creditDisplay .morusLogo { height: calc(var(--s, 1) * 22px); }
+.creditDisplay .morusFallback { font-size: calc(var(--s, 1) * 13px); line-height: calc(var(--s, 1) * 22px); }
+
+/* ─── Hosted by (guest form) ─── */
+.hosted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--hairline);
+}
+.hostedCompact { padding-bottom: 0; margin: 28px 0 0; border-bottom: 0; gap: 8px; }
+.hostedLabel {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+/* Black logo → light champagne card so it reads on the dark evergreen. */
+.hostChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fffaf0, #f4e4bc);
+  box-shadow: 0 10px 26px -12px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(226, 184, 102, 0.45);
+}
+.hostLogo { display: block; width: 100%; max-width: 120px; height: auto; }
+.hostedCompact .hostLogo { max-width: 92px; }
+.hostFallback {
+  font-family: var(--font-serif-stack);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  color: #111;
+  padding: 2px 4px;
+}

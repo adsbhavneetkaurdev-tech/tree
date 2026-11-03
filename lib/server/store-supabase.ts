@@ -1,7 +1,7 @@
 import "server-only";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import type { PublicWish, TreeState, Wish, WishCounts, WishStatus } from "@/lib/types";
-import { PUBLIC_FIELDS, type WishStore } from "./store";
+import { PUBLIC_FIELDS, supabaseUrl, type WishStore } from "./store";
 
 class SupabaseStore implements WishStore {
   readonly kind = "supabase" as const;
@@ -95,7 +95,7 @@ class SupabaseStore implements WishStore {
 const g = globalThis as unknown as { __wishTreeSupabaseStore?: SupabaseStore };
 export function getSupabaseStore(): SupabaseStore {
   return (g.__wishTreeSupabaseStore ??= new SupabaseStore(
-    createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, {
+    createClient(supabaseUrl(), process.env.SUPABASE_SERVICE_ROLE_KEY!.trim(), {
       auth: { persistSession: false, autoRefreshToken: false },
     }),
   ));

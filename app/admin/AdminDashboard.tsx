@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import QRCode from "qrcode";
 import { subscribeToChanges, type ConnectionState } from "@/lib/realtime-client";
 import type { RealtimeConfig, TreeState, Wish, WishCounts, WishStatus } from "@/lib/types";
+import MorusCredit from "@/components/MorusCredit";
 import styles from "./admin.module.css";
 
 type Filter = WishStatus | "all";
@@ -303,6 +304,8 @@ export default function AdminDashboard({ realtime, guestUrl }: { realtime: Realt
           </div>
         </aside>
       </div>
+
+      <MorusCredit />
 
       {toast && <div className={styles.toast} role="status">{toast}</div>}
     </main>

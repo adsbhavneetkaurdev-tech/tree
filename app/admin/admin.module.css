@@ -126,7 +126,7 @@ button:disabled { cursor: default; }
 }
 
 /* Login */
-.loginPage { min-height: 100svh; display: grid; place-items: center; padding: 24px; background: radial-gradient(80% 50% at 50% 0%, rgba(226, 184, 102, 0.12), transparent 70%), var(--evergreen-900); }
+.loginPage { min-height: 100svh; display: grid; place-items: center; align-content: center; gap: 8px; padding: 24px; background: radial-gradient(80% 50% at 50% 0%, rgba(226, 184, 102, 0.12), transparent 70%), var(--evergreen-900); }
 .loginCard { width: 100%; max-width: 380px; display: flex; flex-direction: column; padding: 32px 28px; border-radius: 20px; border: 1px solid var(--hairline); background: rgba(18, 53, 38, 0.4); }
 .loginTitle { margin: 0 0 22px; font-family: var(--font-serif-stack); font-weight: 400; font-size: 34px; color: var(--ivory); }
 .fieldLabel { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
