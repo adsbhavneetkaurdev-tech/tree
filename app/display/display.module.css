@@ -21,7 +21,7 @@
 .credit {
   position: absolute;
   left: calc(var(--s, 1) * 72px);
-  bottom: calc(var(--s, 1) * 26px);
+  bottom: calc(var(--s, 1) * 30px);
   line-height: 0;
 }
 .hud {

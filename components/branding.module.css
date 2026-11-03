@@ -2,44 +2,60 @@
 .footer {
   display: flex;
   justify-content: center;
-  padding: 20px 16px max(16px, env(safe-area-inset-bottom));
+  padding: 24px 16px max(20px, env(safe-area-inset-bottom));
 }
+/* A small engraved-looking plaque: dark glass, gold hairline, gold small caps. */
 .credit {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(244, 228, 188, 0.62);
+  gap: 12px;
+  padding: 7px 8px 7px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 184, 102, 0.38);
+  background: linear-gradient(180deg, rgba(18, 53, 38, 0.55), rgba(3, 11, 8, 0.6));
+  box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(244, 228, 188, 0.08);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--gold);
   text-decoration: none;
   font-family: var(--font-sans-stack);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  transition: color 0.2s, opacity 0.3s;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
-.credit:hover, .credit:focus-visible { color: var(--ivory); }
+.credit:hover, .credit:focus-visible {
+  border-color: rgba(243, 212, 139, 0.75);
+  box-shadow: 0 12px 32px -14px rgba(0, 0, 0, 0.9), 0 0 24px -6px rgba(226, 184, 102, 0.45);
+}
 .creditText { white-space: nowrap; }
 /* The logo has dark navy lettering, so it sits on a soft ivory backing. */
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: 3px 7px;
-  border-radius: 6px;
-  background: rgba(251, 246, 234, 0.94);
-  box-shadow: 0 4px 14px -6px rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 9px;
+  background: linear-gradient(180deg, #fffdf7, #f7eedb);
+  box-shadow: inset 0 0 0 1px rgba(226, 184, 102, 0.35);
 }
-.morusLogo { display: block; height: 24px; width: auto; }
-.morusFallback { font-weight: 600; font-size: 13px; line-height: 24px; color: #e2491a; letter-spacing: 0.02em; }
+.morusLogo { display: block; height: 30px; width: auto; }
+.morusFallback { font-weight: 700; font-size: 17px; line-height: 30px; letter-spacing: 0.01em; text-transform: none; color: #e2491a; }
 
-/* Projector: sized relative to the 1920×1080 frame via --s, subtle until hovered. */
+/* Projector: sized in 1920×1080 units via --s. Clearly legible from across a room,
+   balanced against the QR panel in the opposite corner. */
 .creditDisplay {
-  gap: calc(var(--s, 1) * 9px);
-  font-size: calc(var(--s, 1) * 14px);
-  opacity: 0.5;
-  color: rgba(244, 228, 188, 0.8);
+  gap: calc(var(--s, 1) * 16px);
+  padding: calc(var(--s, 1) * 9px) calc(var(--s, 1) * 10px) calc(var(--s, 1) * 9px) calc(var(--s, 1) * 20px);
+  border-radius: calc(var(--s, 1) * 16px);
+  font-size: calc(var(--s, 1) * 13px);
+  letter-spacing: 0.3em;
+  opacity: 0.92;
 }
-.creditDisplay:hover { opacity: 0.95; }
-.creditDisplay .chip { padding: calc(var(--s, 1) * 3px) calc(var(--s, 1) * 7px); border-radius: calc(var(--s, 1) * 6px); background: rgba(251, 246, 234, 0.85); }
-.creditDisplay .morusLogo { height: calc(var(--s, 1) * 22px); }
-.creditDisplay .morusFallback { font-size: calc(var(--s, 1) * 13px); line-height: calc(var(--s, 1) * 22px); }
+.creditDisplay:hover { opacity: 1; }
+.creditDisplay .chip { padding: calc(var(--s, 1) * 6px) calc(var(--s, 1) * 12px); border-radius: calc(var(--s, 1) * 10px); }
+.creditDisplay .morusLogo { height: calc(var(--s, 1) * 36px); }
+.creditDisplay .morusFallback { font-size: calc(var(--s, 1) * 21px); line-height: calc(var(--s, 1) * 36px); }
 
 /* ─── Hosted by (guest form) ─── */
 .hosted {
